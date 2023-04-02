@@ -6,7 +6,7 @@
 Step 1: Download this project and extract on your server/localhost then Run
 > $ composer require laravel/ui
 
-> php artisan migrate
+> $ php artisan migrate
 
 Step 2: Now Open Your Browser and hit
 
