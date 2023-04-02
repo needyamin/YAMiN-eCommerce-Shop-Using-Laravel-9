@@ -44,7 +44,7 @@ Step 2: Now Open Your Browser and hit
 
 
 # ADMIN PANEL DEMO
-![Admin Dashboard - 127 0 0 1](https://user-images.githubusercontent.com/16277392/229377154-b9a4c43e-6fe6-45f9-a6e9-f9ee510c9d27.png)
+![adminPanel](https://user-images.githubusercontent.com/16277392/229379079-cbd6206f-d373-4f83-ae28-144d873094a7.png)
 
 # HOMEPAGE DEMO
 ![Welcome to Yamin eCommerce - 127 0 0 1](https://user-images.githubusercontent.com/16277392/229377213-0e91e7e7-b044-4d6a-ae7e-952297ebccca.png)
