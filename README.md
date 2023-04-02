@@ -17,6 +17,27 @@ Download this project and extract on your server/localhost then Run
 
 > Enjoy!
 
+# Some Useful Functions
+> Lightweight Fresh Design
+
+> Powerful Admin Panel and Control
+
+> IP Blocking System
+
+> Flexible User Control System
+
+> Order Control/Delete/Create System
+
+> Daily, Monthly, Total Statistics Report
+
+> Search Track System
+
+> SEO Friendly Script
+
+> Theme Settings
+
+> Log Activity Admin, User, Moderator and much more..
+
 
 # ADMIN PANEL DEMO
 ![Admin Dashboard - 127 0 0 1](https://user-images.githubusercontent.com/16277392/229377154-b9a4c43e-6fe6-45f9-a6e9-f9ee510c9d27.png)
