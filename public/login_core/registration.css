@@ -1,0 +1,208 @@
+/* Google Font Link */
+
+.containerx{
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  background: #fff;
+  padding: 40px 30px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  perspective: 2700px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+
+.containerx .coverx{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  z-index: 98;
+  transition: all 1s ease;
+  transform-origin: left;
+  transform-style: preserve-3d;
+}
+.containerx #flipx:checked ~ .coverx{
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+}
+ .containerx .coverx .frontx,
+ .containerx .coverx .backx{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.coverx .backx{
+  transform: rotateY(-180deg);
+}
+.containerx .coverx::before,
+.containerx .coverx::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #017661;
+  z-index: 8;
+}
+.containerx .coverx::after{
+  
+  transform: rotateY(180deg);
+}
+.containerx .coverx img{
+  position: absolute;
+  height: 80px;
+  width: 400px;
+  
+  z-index: 100;
+}
+.containerx.coverx .backx .backxImg{
+  transform: rotateY('180deg');
+}
+.containerx .coverx .text{
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.coverx .text .text-1,
+.coverx .text .text-2{
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+.coverx .text .text-2{
+  font-size: 15px;
+  font-weight: 500;
+}
+.containerx .formsx{
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+.containerx .form-contentx{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-contentx .login-formx,
+.form-contentx .signup-formx{
+  width: calc(100% / 2 - 25px);
+}
+.formsx .form-contentx .titlex{
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  padding: 10px;
+}
+.formsx .form-contentx .titlex:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 25px;
+  background: #017661;
+}
+.formsx .signup-formx  .titlex:before{
+  width: 20px;
+}
+.formsx .form-contentx .input-boxxes{
+  margin-top: 30px;
+}
+.formsx .form-contentx .input-boxx{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+}
+.form-contentx .input-boxx input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.form-contentx .input-boxx input:focus,
+.form-contentx .input-boxx input:valid{
+  border-color: #017661;
+}
+.form-contentx .input-boxx i{
+  position: absolute;
+  color: #017661;
+  font-size: 17px;
+}
+.formsx .form-contentx .text{
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+.formsx .form-contentx .text a{
+  text-decoration: none;
+}
+.formsx .form-contentx .text a:hover{
+  text-decoration: underline;
+}
+.formsx .form-contentx .button{
+  color: #fff;
+  margin-top: 40px;
+}
+.formsx .form-contentx .button input{
+  color: #fff;
+  background: #017661;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.formsx .form-contentx .button input:hover{
+  backxground: #017661;
+}
+.formsx .form-contentx label{
+  color: #017661;
+  cursor: pointer;
+}
+.formsx .form-contentx label:hover{
+  text-decoration: underline;
+}
+.formsx .form-contentx .login-text,
+.formsx .form-contentx .sign-up-text{
+  text-align: center;
+  margin-top: 25px;
+}
+.containerx #flipx{
+  display: none;
+}
+@media (max-width: 730px) {
+  .containerx .coverx{
+    display: none;
+  }
+  .form-contentx .login-formx,
+  .form-contentx .signup-formx{
+    width: 100%;
+  }
+  .form-contentx .signup-formx{
+    display: none;
+  }
+  .containerx #flipx:checked ~ .formsx .signup-formx{
+    display: block;
+  }
+  .containerx #flipx:checked ~ .formsx .login-formx{
+    display: none;
+  }
+}

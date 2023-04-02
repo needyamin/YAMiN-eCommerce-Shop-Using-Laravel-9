@@ -1,0 +1,21 @@
+###Step 1: (Install Laravel UI)
+composer require laravel/ui
+
+####Step 2: (Generate Auth UI)
+php artisan ui bootstrap --auth
+
+#### NodeJS ########
+npm install --save-dev vite laravel-vite-plugin
+npm install --save-dev @vitejs/plugin-vue
+npm run build
+
+
+#####Vite manifest not found at:
+###^composer require laravel/breeze
+###^php artisan breeze:install
+
+
+
+################################################
+Database SEED
+php artisan db:seed

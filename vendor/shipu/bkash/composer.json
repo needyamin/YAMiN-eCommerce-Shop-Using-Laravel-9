@@ -1,0 +1,41 @@
+{
+    "name": "shipu/bkash",
+    "type": "library",
+    "require": {
+        "php": ">=5.6",
+        "nahid/apiz": "4.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shipu Ahamed",
+            "email": "shipuahamed01@gmail.com"
+        },
+        {
+            "name": "Aminul Islam",
+            "email": "me@aminul.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Shipu\\Bkash\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shipu\\Bkash\\BkashServiceProvider"
+            ],
+            "aliases": {
+                "Tokenized": "Shipu\\Bkash\\Facades\\Tokenized",
+                "Checkout": "Shipu\\Bkash\\Facades\\Checkout",
+                "Payment": "Shipu\\Bkash\\Facades\\Payment"
+            }
+        }
+    }
+}
