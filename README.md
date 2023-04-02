@@ -3,10 +3,14 @@
 
 # HOW TO INSTALL?
 
-Download this project and extract on your server/localhost then Run
+Step 1: Download this project and extract on your server/localhost then Run
 > $ composer require laravel/ui
 
-> Hit www.yoursiteurl.com/install/admin 
+> php artisan migrate
+
+Step 2: Now Open Your Browser and hit
+
+> www.yoursiteurl.com/install/admin 
 
 > Localhost Example: http://127.0.0.1:8000/install/admin
 
