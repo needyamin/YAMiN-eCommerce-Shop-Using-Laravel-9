@@ -34,8 +34,7 @@ use App\Http\Controllers\req4stockController;
 use App\Http\Controllers\FaceBookController;
 
 #Install ADMIN
-Route::GET('install/admin', [OneClickController::class, 'installADMIN']);
-
+Route::GET('install/admin', [OneClickController::class, 'installADMIN'])->middleware('throttle:2,1');
 
 
 #
