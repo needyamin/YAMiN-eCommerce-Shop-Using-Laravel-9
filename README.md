@@ -24,11 +24,11 @@
 # Some Useful Functions
 > Powerful Admin Panel and Control
 
-> Social Login System
+> Social Login System (Integrated)
 
-> SSL Wirless SMS System
+> SSL Wirless SMS System (Integrated)
 
-> SSSLCOMMERZ PAYMENT SYSTEM
+> SSLCOMMERZ Payment System (Integrated)
 
 > IP Blocking System
 
@@ -38,9 +38,9 @@
 
 > Daily, Monthly, Total Statistics Report
 
-> Search Track System
+> Search Results Tracking System
 
-> SEO Friendly Script
+> SEO Friendly URL
 
 > Theme Settings
 
