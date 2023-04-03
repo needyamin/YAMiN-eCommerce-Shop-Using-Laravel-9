@@ -22,9 +22,13 @@
 > Enjoy!
 
 # Some Useful Functions
-> Lightweight Fresh Design
-
 > Powerful Admin Panel and Control
+
+> Social Login System
+
+> SSL Wirless SMS System
+
+> SSSLCOMMERZ PAYMENT SYSTEM
 
 > IP Blocking System
 
