@@ -55,7 +55,7 @@
 ![adminPanel](https://user-images.githubusercontent.com/16277392/229379079-cbd6206f-d373-4f83-ae28-144d873094a7.png)
 
 # HOMEPAGE DEMO
-![Welcome to Yamin eCommerce - 127 0 0 1](https://user-images.githubusercontent.com/16277392/229862054-23715aba-f785-468d-ae18-3f9245e1679c.png)
+![Welcome to Yamin eCommerce - 127 0 0 1](https://user-images.githubusercontent.com/16277392/229862916-f21bdbf8-e1f8-46ba-8fe7-8c23fd938f9d.png)
 
 > For More Info contact: needyamin@gmail.com
 
