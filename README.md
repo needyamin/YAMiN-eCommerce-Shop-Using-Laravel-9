@@ -22,7 +22,13 @@
 > Enjoy!
 
 # Some Useful Functions
-> Powerful Admin Panel and Control
+> Powerful Admin Control Panel
+
+> Flexible User Control System
+
+> Order Tracking, Gust Order, Newsletter
+
+> Email Notification, SMS Notification Alert
 
 > Social Login System (Integrated)
 
@@ -32,13 +38,11 @@
 
 > IP Blocking System
 
-> Flexible User Control System
-
-> Order Control/Delete/Create System
-
 > Daily, Monthly, Total Statistics Report
 
 > Search Results Tracking System
+
+> Quick Product Edit/Modify System 
 
 > SEO Friendly URL
 
