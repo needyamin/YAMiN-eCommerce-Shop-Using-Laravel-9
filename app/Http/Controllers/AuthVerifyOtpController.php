@@ -70,7 +70,7 @@ $verificationCode = VerificationCode::where('user_id', Auth::user()->id)->latest
        //$sender->setMobile(['017XXYYZZAA','018XXYYZZAA']);
         $sender->setMessage('Dear Customer, 
         Your OTP is: '.$verificationCode->otp.'
-        For any query: 01810023444 Bishuddhotastore.Com');
+        For any query: 01878578504 needyamin.github.io');
         $sender->setQueue(false); //if you want to sent sms from queue
         $sender->setConfig(['api_token' => env('SSLWirless_api_token'),
         'sid' => 'BISHUDDHOTA','csms_id' => env('SSLWirless_csms_id')]);

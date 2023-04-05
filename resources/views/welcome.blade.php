@@ -48,7 +48,7 @@ $Products=App\Models\Products::where('status','=','1')->latest()->paginate(12);
     </style>
 
  @foreach ($Products as $item)
-  <div class="coverpadding col-md-3 px-2 my-2 wow animated fadeInUpBig fast" style="min-height:480px;">
+  <div class="coverpadding col-md-3 px-2 my-2" style="min-height:480px;">
     <div class="yaminMAKE">
       
  <!-- display if quantity empty -->   

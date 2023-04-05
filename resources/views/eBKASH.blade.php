@@ -47,7 +47,7 @@
 <script>
       // function to open the popup window
       function openPopUp() {
-         let url = "https://shop.bkash.com/b-t-l-disinfect01620008839/paymentlink";
+         let url = "https://shop.bkash.com/";
          let height = 600;
          let width = 1200;
          var left = ( screen.width - width ) / 2;

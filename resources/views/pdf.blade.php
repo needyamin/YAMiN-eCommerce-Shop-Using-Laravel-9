@@ -36,7 +36,7 @@
 </div>
 <div>Address: House # 37 , Road #27,</div> <div>27(old) Dhanmondi, Dhaka -1209, Bangladesh</div>
 <div>E-mail: contact@eCommercebd.com</div>
-<div>Help Line: 01810023444</div>
+<div>Help Line: 01878578504</div>
 </div>
 
 <div class="col-sm-6">

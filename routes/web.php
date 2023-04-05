@@ -37,6 +37,7 @@ use App\Http\Controllers\FaceBookController;
 Route::GET('install/admin', [OneClickController::class, 'installADMIN'])->middleware('throttle:2,1');
 
 
+
 #
 #use App\Http\Controllers\Product_Ordering_Controller;
 #use App\Http\Controllers\Product_Ordering_Controller;
