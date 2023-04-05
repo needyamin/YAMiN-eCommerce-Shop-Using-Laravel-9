@@ -45,7 +45,7 @@ class AuthOtpController extends Controller
                 //$sender->setMobile(['017XXYYZZAA','018XXYYZZAA']);
                  $sender->setMessage('Dear Customer, 
                  Your OTP is: '.$verificationCode->otp.'
-                 For any query: 01810023444 BishuddhotaStore.Com');
+                 For any query: 01810023444 needyamin.github.io');
                  $sender->setQueue(false); //if you want to sent sms from queue
                  $sender->setConfig([
                      'api_token' => env('sms_api_token'),
@@ -72,14 +72,14 @@ class AuthOtpController extends Controller
             /////////////////// email /////////////////////////
             if ($name) {$welcomemessage = 'Hello '.$name.'<br>';}
             else{$welcomemessage = 'Hello <br>';}
-            $emailbody = 'Dear Customer, Your OTP is: <span style="font-size:20px; font-weight:bold;"> '.$verificationCode->otp.' </span> <br> For any query: 01810023444 Bishuddhotastore.Com';
+            $emailbody = 'Dear Customer, Your OTP is: <span style="font-size:20px; font-weight:bold;"> '.$verificationCode->otp.' </span> <br> For any query: 01810023444 needyamin.github.io';
             $emailcontent = array(
             'WelcomeMessage'=>$welcomemessage,
             'emailBody' => $emailbody);
             
              Mail::send(array('html' => 'emails.OTP'), $emailcontent, function ($message) use ($loginid, $mobile) {
-             $message->to($loginid, $mobile)->subject('Your Bishuddhotastore OTP Code');
-             $message->from('bishuddhotastore@btl.net.bd', 'BishuddhotaStore');
+             $message->to($loginid, $mobile)->subject('Your YAMiN OTP Code');
+             $message->from('YAMiN@needyamin.github.io', 'YAMiN');
             });
         
     ################ EMAIL CODE END ###################
@@ -103,7 +103,7 @@ class AuthOtpController extends Controller
        //$sender->setMobile(['017XXYYZZAA','018XXYYZZAA']);
         $sender->setMessage('Dear Customer, 
         Your OTP is: '.$verificationCode->otp.'
-        For any query: 01810023444 BishuddhotaStore.Com');
+        For any query: 01810023444 needyamin.github.io');
         $sender->setQueue(false); //if you want to sent sms from queue
         $sender->setConfig([
             'api_token' => env('sms_api_token'),
