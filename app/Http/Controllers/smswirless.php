@@ -15,9 +15,9 @@ class smswirless extends Controller
               $sender->setMessage('helloooooooo boss!');
               $sender->setConfig(
           [
-            'api_token' => 'le17cmrx-uq2fvtgr-feynedje-iftthprk-aq7eqznl',
-            'sid' => 'BISHUDDHOTA',
-            'csms_id' => 'm01730472434i1665025420147'
+            'api_token' => 'xxx',
+            'sid' => 'xxx',
+            'csms_id' => 'xxx'
           ]);
               $status = $sender->send();
               dd($status);  
