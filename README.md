@@ -14,12 +14,13 @@
 
 > Localhost Example: http://127.0.0.1:8000/install/admin
 
-
-> ADMIN MOBILE: 01878578504 
-
-> ADMIN PASSWORD: admin@123
-
 > Enjoy!
+
+`Step 3:` Admin Login User & PASSWORD
+| Admin Login Information        | PASSWORD           |
+| ------------------------------ | ------------------ |
+| ADMIN MOBILE                   |  01878578504       |
+| ADMIN PASSWORD                 |  admin@123         |
 
 # Some Useful Functions
 > Powerful Admin Control Panel
