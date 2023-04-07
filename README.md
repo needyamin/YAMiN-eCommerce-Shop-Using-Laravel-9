@@ -16,7 +16,7 @@
 
 > Enjoy!
 
-`Step 3:` Admin Login User & PASSWORD
+`Step 3:` Administrative Credentials
 | Admin Login Information        | PASSWORD           |
 | ------------------------------ | ------------------ |
 | ADMIN MOBILE                   |  01878578504       |
