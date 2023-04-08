@@ -20,28 +20,38 @@
   <table id="indexproduct" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                     <tr>
+                        <th style="text-align: center;"> SL. </th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Mobile No.</th>
+                        <th>Mobile</th>
                         <th>Product Code</th>
-                        <th>Quantity</th>
-                        <th>Message</th>
+                        <th>Quantity?</th>
                         <th>IP</th>
+                        <th>Date/Time</th>
                         <th></th>
                     </tr>
                 </thead>
              <tbody>
 
+
+                    @php $i=1; @endphp
                     @foreach ($reqforstock as $costing)
+
+                    @php 
+                    $Products=App\Models\Products::where('id','=',$costing->product_id)->first();
+                    $me = $Products->url;
+                    @endphp
+
                         <tr>
+                            <td style="text-align: center;"> {{ $i++ }} </td>
                             <td>{{ $costing->name }}</td>
                             <td>{{ $costing->email }}</td>
                             <td>{{ $costing->mobile_no }}</td>
-                            <td>A-{{ $costing->product_id }}</td>
-                            <th>{{ $costing->quantity }}</th>
-                            <th>{{ $costing->message }}</th>
-                            <th>{{ $costing->ip }}</th>
-                            <th><a href="{{ url('admin/deletereqforstock/') }}/{{ $costing->id }}">Delete</a></th>
+                            <td><a href="{{ url('shop').'/'.$me }}" target="_blank">A-{{ $costing->product_id }}</a></td>
+                            <td>{{ $costing->message }}</td>
+                            <td>{{ $costing->ip }}</td>
+                            <td width="150px;">{{Carbon\Carbon::parse($costing->created_at)->format('d M Y / g:i A')}}</td>
+                            <td><a href="{{ url('admin/deletereqforstock/') }}/{{ $costing->id }}">Delete</a></td>
                         </tr>
                         @endforeach      
                     </tbody>
