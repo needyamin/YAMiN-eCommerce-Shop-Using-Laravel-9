@@ -77,10 +77,46 @@
     
             
      @foreach(session('cart') as $id => $details)
+
+@php 
+$Products=App\Models\Products::where('id','=',$details['item_id'])->first();
+@endphp
+
   <tr>  
     <td style="text-align:center;width:50px;"> #<?php echo $i++;?> </td>
     <td style="text-align:center;"> <img src="{{asset('Uploads/Products/'.$details['item_image'].'') }}" width="40px"> </td>
-    <td> {{$details['item_name']}} </td>
+    <td> {{$details['item_name']}} 
+
+    @if ($Products->quantity == 0)
+
+    
+<script type="text/javascript"> $(window).on('load', function() {$('#exampleModalLong').modal('show');});</script>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" onclick="javascript:window.location.reload()">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Warning</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      {{ Session::forget('cart.' . $details['item_id']); }}
+      Right now some product not available on our stock. We removed this product from your cart. Please check order summary carefully..
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<br><span style="color:red"> Stock Out at {{Carbon\Carbon::parse($Products->updated_at)->format('d M Y / g:i A')}} </span>
+@endif
+
+
+    </td>
     <td style="text-align:center;"> {{$details['item_quantity']}} </td> 
     <td style="text-align:center;width:100px;"> {{number_format($details['Final_Price'],2)}} TK</td>
     <?php $delivery_charges = $delivery_charges; ?>
