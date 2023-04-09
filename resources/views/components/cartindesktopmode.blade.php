@@ -76,7 +76,6 @@ $Products=App\Models\Products::where('id','=',$details['item_id'])->first();
 
    <td class="cart-product-quantity">
    @if ($Products->quantity == 0) 
-   {{ Session::forget('cart.' . $details['item_id']); }}
    <span class="text" style="font-size:25px;color:red;">  Not Avaliable </span>
    @else 
     <input type="hidden" class="product_id" value="{{ $details['item_id'] }}">
