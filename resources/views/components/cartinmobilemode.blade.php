@@ -33,9 +33,7 @@ $Products=App\Models\Products::where('id','=',$details['item_id'])->first();
 <h4><a href="javascript:void(0)">{{ $details['item_name'] }}</a>
 
 @if ($Products->quantity == 0)
-{{ Session::forget('cart.' . $details['item_id']); }}
-
-            <div style="font-size:13px;color:red;"> This product not avaliable on our stock.. </div>
+<div style="font-size:13px;color:red;"> This product not avaliable on our stock.. </div>
              @endif
 </h4>  
 
