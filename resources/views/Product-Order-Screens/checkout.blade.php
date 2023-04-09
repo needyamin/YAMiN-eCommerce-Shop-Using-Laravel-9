@@ -58,6 +58,17 @@
 <div class="row"> 
 <div class="col-lg-6 card"> 
 
+
+
+
+
+@if (!session('cart'))
+<script>setTimeout(function(){window.location.href = '/';}, 3000);</script>
+<h2 style="margin-top: 10%;text-align:center;">Cart Product Not Found! <br>Page Redirecting....</h2>
+@endif
+
+
+
 <table class="table">
 
     @if(session('cart'))
