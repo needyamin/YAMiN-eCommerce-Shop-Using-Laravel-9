@@ -32,8 +32,8 @@
                 <div class="table-responsive">
                 <h5 class="card-title">Your cart items</h5>
                     <div class="col-md-12 text-right mb-3" style="margin-top:15px;">
-     <a href="clear-cart" class="font-weight-bold">Clear Cart</a>
-                    </div>
+                      <a href="clear-cart" class="font-weight-bold">Clear Cart</a>
+                        </div>
  <table class="table my-auto  text-center">
      <thead  class="table-bordered" style="background: white;border-style:solid;">
     
@@ -50,26 +50,36 @@
          @foreach(session('cart') as $id => $details)
          <?php $total += $details['Final_Price'] * $details['item_quantity'] ?>
         
-             <tr class="cartpage">
-                 
+@php
+$Products=App\Models\Products::where('id','=',$details['item_id'])->first();
+@endphp
+          <tr class="cartpage">     
              <td class="cart-image">
                  <a href="{{ url('Shop', $details['item_url'] ) }}">
                  <img src="{{asset('Uploads/Products/'.$details['item_image'].'') }}" width="60px" height="50px" onerror="this.src='{{asset('Img/no_image.jpg')}}';this.onerror='';">
                  </a>
                 </td>
 
-                 <td class="cart-product-name-info">
-                     <div class='cart-product-description' style="text-align:left;font-size:19px;margin-top:10px;font-weight:bold;">
-                     <a href="{{ url('Shop', $details['item_url'] ) }}">{{ $details['item_name'] }}</a>
+        <td class="cart-product-name-info">
+            <div class='cart-product-description' style="text-align:left;font-size:19px;margin-top:10px;font-weight:bold;">
+                <a href="{{ url('Shop', $details['item_url'] ) }}">{{ $details['item_name'] }}</a>
+
+            @if ($Products->quantity == 0)
+            <div style="font-size:13px;color:red;"> This product has been stock out at {{Carbon\Carbon::parse($Products->updated_at)->format('d M Y / g:i A')}} </div>
+             @endif
+
                      </div>
                      
-                 </td>
+                </td>
 
 
 
    <td class="cart-product-quantity">
+   @if ($Products->quantity == 0) 
+   {{ Session::forget('cart.' . $details['item_id']); }}
+   <span class="text" style="font-size:25px;color:red;">  Not Avaliable </span>
+   @else 
     <input type="hidden" class="product_id" value="{{ $details['item_id'] }}">
-       
     <div >
 
     <button class="modify_quantity" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"><i class="fas fa-minus"></i></button>
@@ -84,13 +94,16 @@ if(post == '0'){document.getElementById("packpack{{ $details['item_id'] }}").val
 
 <button class="modify_quantity" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i class="fas fa-plus"></i></button>
 </div>
-
+@endif
 </td>
             
 
 
 <td class="cart-product-grand-total" width="20%" >
 <strong><span class="cart-grand-total-price">
+@if ($Products->quantity == 0)
+<span class="text" style="font-size:25px;color:red;"> STOCK OUT! </span>
+@else 
 
 @if ($details['item_price']  * $details['item_quantity'] == $details['Final_Price'] * $details['item_quantity'])
     @else
@@ -99,7 +112,9 @@ if(post == '0'){document.getElementById("packpack{{ $details['item_id'] }}").val
 
 <span class="text" style="font-size:25px;color:#017661;"> {{ number_format($details['Final_Price'] * $details['item_quantity'],2)}} TK</span><br>      
 <span>@if ($details['contentforofferprice'] < 0) @else {{$details['contentforofferprice']}} @endif</span>
-</strong>         
+</strong>    
+
+@endif
 </td>
        
 
