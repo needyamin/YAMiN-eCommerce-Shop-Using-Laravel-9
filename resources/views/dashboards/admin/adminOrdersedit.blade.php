@@ -52,7 +52,9 @@ $forloop=App\Models\User::all();
 
 <div class="card p-2"> Order ID: {{ $order->id }} </div> </br>
 
-  <form>
+<form action="{{ url('admin/admin-Orders-edit/updateAddressPrice') }}" method="POST">
+@csrf
+<input type="hidden" name="order_id" value="{{ $order->id }}">
 
   <div class="row">
       <div class="col-md-6">
@@ -84,8 +86,8 @@ $forloop=App\Models\User::all();
 
       <div class="col-md-6">
         <div class="form-group">
-          <label for="last">Delivery Address</label>
-          <p contenteditable="true" placeholder="Delivery Address" style='border:1px solid #d5d5d5; padding:5px;color: #868484;'>{{ $order->Delivery_Address }}</p>
+          <label for="last">Delivery Address</label><br>
+          <textarea name="address" rows="3" cols="50">{{ $order->Delivery_Address }}</textarea>
         </div>
       </div>
 
@@ -98,26 +100,16 @@ $forloop=App\Models\User::all();
 
         <div class="form-group">
           <label for="email">Amount</label>
-          <input type="number" class="form-control" value="{{ $order->Amount }}" placeholder="Amount">
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="url">Coupen Code</label>
-          <input type="text" class="form-control" value="{{ $order->Coupen_Code }}" placeholder="Coupen Code">
+          <input type="number" name="amount" class="form-control" value="{{ $order->Amount }}" placeholder="Amount">
         </div>
       </div>
 
     </div>
     <!-- row -->
 
+<input type="submit" name="submit" class="btn btn-primary" value="Update Address & AMOUNT"></input>
+</form>
 
-
-
-
-<button type="submit" class="btn btn-primary disabled">Update</button>
-  </form>
 </div>
 
 
@@ -163,7 +155,7 @@ $forloop=App\Models\User::all();
 
 <button type="button" name="add" id="add-btn" class="btn btn-warning">Add More</button>
 <br><br>
-<input type="submit" class="btn btn-primary" name="Submit" value="Submit">
+<input type="submit" class="btn btn-primary" name="Submit" value="Update Product Lists">
 
 </div>
 
