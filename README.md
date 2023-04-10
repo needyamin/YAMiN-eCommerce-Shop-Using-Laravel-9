@@ -58,5 +58,6 @@
 # HOMEPAGE DEMO
 ![Welcome to Yamin eCommerce - 127 0 0 1](https://user-images.githubusercontent.com/16277392/229862916-f21bdbf8-e1f8-46ba-8fe7-8c23fd938f9d.png)
 
-> For More Info contact: needyamin@gmail.com
+> Please create an "issue" on github if you find any bug.
 
+> For More Info contact: needyamin@gmail.com
