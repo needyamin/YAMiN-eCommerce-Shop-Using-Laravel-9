@@ -29,22 +29,22 @@ class LinksController extends Controller{
         
         //orderTotalAmountSum NOT WORKING MAKE COMMENTS
         #$currentMonth = date('m');
-        #$ordersamount = DB::table("orders")->whereRaw('MONTH(created_at) = ?',[$currentMonth])->sum('Amount');
-        #$ordersamount = DB::table("orders")->whereDate('created_at', '<=', now()->subDays(30))->sum('Amount');
+        #$ordersamount = DB::table("orders")->where('Shipping_Status','=','Completed')->whereRaw('MONTH(created_at) = ?',[$currentMonth])->sum('Amount');
+        #$ordersamount = DB::table("orders")->where('Shipping_Status','=','Completed')->whereDate('created_at', '<=', now()->subDays(30))->sum('Amount');
         
         ## Last Month Order AMOUNT
-        $ordersamount= Order::whereMonth('created_at', date('m'))->whereYear('created_at', date('Y'))->sum('Amount');
+        $ordersamount= Order::where('Shipping_Status','=','Completed')->whereMonth('created_at', date('m'))->whereYear('created_at', date('Y'))->sum('Amount');
         $lastMonthordersamount = Order::whereMonth('created_at', '=', Carbon::now()->subMonth()->month)->sum('Amount');
 
         ## ALL ORDER AMOUNT
-        $allamount= Order::sum('Amount');
+        $allamount= Order::where('Shipping_Status','=','Completed')->sum('Amount');
 
 
         //order page -current month data
         $currentMonth = date('m');
-        $ordersid = DB::table("orders")->whereRaw('MONTH(created_at) = ?',[$currentMonth])->count('id');
+        $ordersid = DB::table("orders")->where('Shipping_Status','=','Completed')->whereRaw('MONTH(created_at) = ?',[$currentMonth])->count('id');
 
-        $lastMonthR = DB::table("orders")->whereMonth('created_at', '=', Carbon::now()->subMonth()->month)->count('id');
+        $lastMonthR = DB::table("orders")->where('Shipping_Status','=','Completed')->whereMonth('created_at', '=', Carbon::now()->subMonth()->month)->count('id');
 
         //order page -todaydata
         $todayDate = DB::table("orders")->whereDate('created_at', Carbon::today())->count('id');
@@ -90,7 +90,7 @@ class LinksController extends Controller{
 
         ################ Total Statistics ################
         $TPost = DB::table("products")->count('id');
-        $Tamount= DB::table("orders")->sum('Amount');
+        $Tamount= DB::table("orders")->where('Shipping_Status','=','Completed')->sum('Amount');
         $Tuser = DB::table("users")->count('id');
 
 
@@ -349,6 +349,16 @@ class LinksController extends Controller{
             'cart_mass' => $cart_mass, 
         ]);
     }
+
+ public function updateAddressPrice(Request $request){
+    $getID = $request->input('order_id');
+    $OrderList = Order::find($getID);
+    $OrderList->Delivery_Address = $request->input('address');
+    $OrderList->Amount = $request->input('amount');
+    $OrderList->update();
+    return redirect('/admin-Orders')->with('status', 'Order Information has been updated');
+
+ }
 
     ##Delete orders FULL 14-1-2023
     public function deleteorderfULL($id){
