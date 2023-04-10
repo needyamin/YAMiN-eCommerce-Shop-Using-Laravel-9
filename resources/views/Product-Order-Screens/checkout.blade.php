@@ -102,6 +102,18 @@ $Products=App\Models\Products::where('id','=',$details['item_id'])->first();
 
     
 <script type="text/javascript"> $(window).on('load', function() {$('#exampleModalLong').modal('show');});</script>
+<style>
+#exampleModalLong .modal-dialog {
+    -webkit-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    top: 50%;
+    margin: 0 auto;
+}
+</style>
+
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" onclick="javascript:window.location.reload()">
