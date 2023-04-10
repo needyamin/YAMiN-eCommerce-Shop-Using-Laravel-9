@@ -33,11 +33,6 @@ use App\Http\Controllers\req4stockController;
 
 use App\Http\Controllers\FaceBookController;
 
-#Install ADMIN
-Route::GET('install/admin', [OneClickController::class, 'installADMIN'])->middleware('throttle:2,1');
-
-
-
 #
 #use App\Http\Controllers\Product_Ordering_Controller;
 #use App\Http\Controllers\Product_Ordering_Controller;
@@ -89,7 +84,7 @@ Route::get('admin/logActivity', [logActivity::class,'logActivity']);
 
 
 ## SSL Wirless CHECK PAGE
-Route::get('/needyamin',[smswirless::class,'needyamin']);
+####Route::get('/needyamin',[smswirless::class,'needyamin']);
 
 
 Route::get('/test', function () {
@@ -292,6 +287,7 @@ Route::group(['middleware'=>['auth','isAdmin']],function ()
     ### ADD ORDER 7-12-2022 ###
     Route::get('admin/admin-Orders-edit/get/view',[LinksController::class,'adminAddOrdergetView']);
     Route::post('admin/admin-Orders-edit/submit/add',[LinksController::class,'adminAddOrderpost']);
+    Route::post('admin/admin-Orders-edit/updateAddressPrice',[LinksController::class,'updateAddressPrice']);
 
 
     Route::get('admin-Transactions',[LinksController::class,'showTransactions']);
