@@ -131,9 +131,16 @@ td{word-break: break-all !important;}select{width:110px;} table,td,tr{font-size:
                  <tbody>
           
      @foreach ($Orders as $item)
+
+        @php 
+        $Products=App\Models\Products::where('id','=',$item->product_id)->first();
+        $me = $Products->url;
+        @endphp
+
+
       <tr>
         <td style='text-align:center;'>{{$item->id}}</td>
-        <td> {{ $item->product_id }} </td>
+        <td> <a href="{{ url('shop').'/'.$me }}" target="_blank">{{ $item->product_id }}</a> </td>
           <td id="tdID">{{ $item->name }} </td>
            <td style="text-align:left;">{{ $item->phone }}</td>
             <td>{{ $item->address }}</td>              
