@@ -3,7 +3,7 @@
 
 # HOW TO INSTALL?
 
-`Step 1:` Download this project and extract on your server/localhost. If you don't install composer then please download and install if from here https://getcomposer.org/download/ after successfully installed composer, open terminal same path where you extracted this script then run this command below:
+`Step 1:` Download this project and extract on your server/localhost. If you don't install composer then please download if from here https://getcomposer.org/download/ and install on your machine. After successfully installed composer, open terminal same path where you extracted this script then run this command below:
 
 > $ composer require laravel/ui
 
