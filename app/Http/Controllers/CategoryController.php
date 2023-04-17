@@ -24,6 +24,11 @@ class CategoryController extends Controller{
  ######## CATEGORY FEED FETCHING ########
     public function categoryfetch(Request $request, $category) {
         $find_pdID = category::where('slug', '=', $category)->orwhere('id', '=', $category)->latest()->first();
+
+        if(!$find_pdID){
+         abort(404);
+        }
+
         $mycatID= $find_pdID->id;
 
         ## category feed display all subcategory name @query
