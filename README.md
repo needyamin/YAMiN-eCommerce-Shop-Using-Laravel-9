@@ -3,16 +3,20 @@
 
 # HOW TO INSTALL?
 
-`Step 1:` Download this project and extract on your server/localhost then Run
+`Step 1:` Download this project and extract on your server/localhost. If you don't install composer then please download and install if from here https://getcomposer.org/download/ after successfully installed composer, open terminal same path where you extracted this script then run this command below:
+
 > $ composer require laravel/ui
 
 > $ php artisan migrate
 
-`Step 2:` Now Open Your Browser and hit
 
-> www.yoursiteurl.com/install/admin 
+`Step 2:` Now Open Your Browser and type this address on your browser address bar and hit enter.
 
 > Localhost Example: http://127.0.0.1:8000/install/admin
+
+> Live Websie Example: www.yoursite.com/install/admin 
+
+> Now Use Below Credentials For Login: 01878578504:admin@123 
 
 > Enjoy!
 
