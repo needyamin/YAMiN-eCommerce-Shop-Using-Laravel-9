@@ -140,8 +140,12 @@ td{word-break: break-all !important;}select{width:110px;} table,td,tr{font-size:
                                <td style="text-align:left;width:170px;text-align: justify;font-size:small"><?php echo $item->Delivery_Address ?></td>
                                <td style="width:90px;text-align:left;font-size:small">{{$item->city}}</td>
                                <td style="text-align:center;width:150px;">{{number_format($item->Amount,2)}} <span style="font-size: 20px;">৳</span> <p class="text-muted">{{ $item->paymentmode }}</p>  </td>
+                             
                                
-            <td id="load{{$item->id}}">
+
+
+
+ <td id="load{{$item->id}}">
        <!-- payment status starts -->
       <form action="admin-Update-Payment-Status" id="paymentUpdate{{$item->id}}" method="POST">
                      
@@ -187,8 +191,14 @@ $('#paymentUpdate{{$item->id}}').on('submit',function(e){
 
            </td>
 
- 
-          <td id="loadx{{$item->id}}">
+
+
+
+
+
+
+
+                               <td id="loadx{{$item->id}}">
               @if($item->Order_Cancel_Status==1)
               @else 
                               
@@ -257,6 +267,12 @@ $('#shipping{{$item->id}}').on('submit',function(e){
 
 
 
+
+
+
+           
+
+
                   
      <td> 
       <a href="{{url('admin-Order-Status/'.$item->id.'')}}" class="badge btn btn-primary pd-2">Check Status</a>
@@ -314,9 +330,6 @@ $(document).ready(function() {
         }
     });
   -->
-
-
-
 
 
 </main>
