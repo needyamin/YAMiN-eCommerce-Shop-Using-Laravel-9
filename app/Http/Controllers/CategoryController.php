@@ -67,6 +67,11 @@ class CategoryController extends Controller{
     public function subcategoryfetch(Request $request, $category) {
         ########
         $find_pdID = subcategory::where('slug', '=', $category)->orwhere('id', '=', $category)->latest()->first();
+
+        if(!$find_pdID){
+           abort(404);
+        }
+ 
         $mycatID= $find_pdID->id;
 
         $Products=Products::where('subcategory_id','=', $mycatID)->latest()->paginate(12);
