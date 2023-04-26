@@ -9,6 +9,8 @@
 
 > $ php artisan migrate
 
+> $ Rename example.env to .env and connect with database
+
 
 `Step 2:` Now Open Your Browser and type this address on your browser address bar and hit enter.
 
