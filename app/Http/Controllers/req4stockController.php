@@ -12,6 +12,7 @@ class req4stockController extends Controller
         
        $req4= $request->validate([
        'mobile_nox' => 'required|digits:11',
+       'message' => 'string|min:1|max:150|nullable',
     ]);
 
     if($request->validate){
